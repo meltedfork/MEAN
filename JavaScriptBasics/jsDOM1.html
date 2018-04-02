@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Students</h1>
+    <ul id="main">
+        <!-- this is empty-->
+    </ul> 
+<script>
+    
+    function appendList(array, id){
+        
+        for(var student of students){
+            let student_list = document.createElement("li");
+            // create an empty li
+            student_list.innerHTML = student;
+            // modify its innerHTML content with a string
+            document.getElementById("main").appendChild(student_list);
+            // append our new DOM element to the id 'main'
+        }
+    };   
+    
+    let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+    let target_id = "main";
+    let element = "h1"
+    appendList(students, target_id);
+    superAppend(students, element, target_id);
+
+    // Bonus: Create a new function called superAppend that 
+    // also takes the type of element we want to append.
+
+    function superAppend(array, element, id){
+        // element can be p, li, h1, etc etc
+        for(var student of students){
+            let student_list = document.createElement(element);
+            // create an empty li
+            student_list.innerHTML = student;
+            // modify its innerHTML content with a string
+            document.getElementById("main").appendChild(student_list);
+            // append our new DOM element to the id 'main'
+        }
+    };
+
+
+</script>   
+</body>
+</html>
