@@ -1,5 +1,4 @@
-// Javascript Basics 2
-// 
+// Javascript Basics - Part 2
 
 function magic_multiply(x, y){
     if(x == 0 && y == 0){
