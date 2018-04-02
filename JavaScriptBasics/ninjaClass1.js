@@ -22,6 +22,16 @@ function Ninja(name){
     this.drinkSake = function(){
         this.health += 10;
     }
+
+    this.punch = function(ninja){
+        ninja.health -= 5;
+        console.log(ninja.name +" was punched by "+ this.name +" and lost 5 Health!")
+    }
+
+    this.kick = function(ninja){
+        ninja.health -= 15;
+        console.log(ninja.name +" was kicked by "+ this.name +" and lost 15 Health!")
+    }
     
     return this;
 }
@@ -41,5 +51,15 @@ const ninjaDog = new Ninja("Shoshi");
 ninjaDog.sayName();
 // -> "I am Shoshi"
 ninjaDog.drinkSake();
+// no console log, but health increased by 10
 ninjaDog.showStats();
 // -> "Name: Shoshi, Health: 110, Speed: 3, Strength: 3"
+ninja1.punch(ninjaDog);
+// -> "Shoshi was punched by Hyabusa and lost 5 Health!"
+ninjaDog.kick(ninja1);
+// -> "Hyabusa was kicked by Shoshi and lost 15 Health!"
+
+// Validations
+const ninjaCat = new Ninja("Meowzer");
+console.log(ninjaCat instanceof Ninja);
+// output: true
