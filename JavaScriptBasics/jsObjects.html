@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript Objects</title>
+</head>
+<body>
+    <script>
+        // Challenge 1: Print all of the students and their cohort.
+        // let students = [
+        //     {name: 'Remy', cohort: 'Jan'},
+        //     {name: 'Genevieve', cohort: 'March'},
+        //     {name: 'Chuck', cohort: 'Jan'},
+        //     {name: 'Osmund', cohort: 'June'},
+        //     {name: 'Nikki', cohort: 'June'},
+        //     {name: 'Boris', cohort: 'June'}
+        // ];
+        // for(student in students){
+        //         console.log(students[student]);
+        //     }
+
+        // Challenge 2: Print out the below object to match the example.    
+        let users = {
+            employees: [
+                {'first_name':  'Miguel', 'last_name' : 'Jones'},
+                {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+                {'first_name' : 'Nora', 'last_name' : 'Lu'},
+                {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+            ],
+            managers: [
+                {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+                {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+            ]
+        };
+        
+            console.log("employees");
+            for(var idx = 0; idx < users.employees.length; idx++){
+                console.log(idx+1, users.employees[idx].last_name, users.employees[idx].first_name, users.employees[idx].first_name.length + users.employees[idx].last_name.length);
+            }
+            console.log("managers");
+            for(var idx = 0; idx < users.managers.length; idx++){
+                console.log(idx+1, users.managers[idx].last_name, users.managers[idx].first_name, users.managers[idx].first_name.length + users.managers[idx].last_name.length);
+            }
+            
+    </script>
+</body>
+</html>
