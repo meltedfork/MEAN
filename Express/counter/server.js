@@ -21,7 +21,7 @@ app.get('/', function (req, res){
         console.log("the if counter is now ", counter);
     }
     else{
-        req.session.counter = 1;
+        req.session.counter = 0;
         counter = req.session.counter;
         console.log("the else counter is now ", counter);
     }
@@ -30,8 +30,8 @@ app.get('/', function (req, res){
   });
 
 app.post('/double', function (req, res){
-        req.session.counter += 1;
-        res.redirect('/');
+    req.session.counter += 1;
+    res.redirect('/');
 })
 
 app.post('/reset', function (req, res){
