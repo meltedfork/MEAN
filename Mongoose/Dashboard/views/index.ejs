@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h3>All the Owls</h3>
+    <ul>
+    <% for(var owl of owls){ %>
+        <li> <a href="/owls/<%=owl.id%>" ><%= owl.name %></a></li>
+    <% } %>    
+    </ul>
+    <button type="submit"><a href="/owls/new">Add an Owl</a></button>
+</body>
+</html>
