@@ -41,3 +41,10 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Other misc
+meanBelt
+bower_components
+node_server
+constructorExample.js
+example.html
