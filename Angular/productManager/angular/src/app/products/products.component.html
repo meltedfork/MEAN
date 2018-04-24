@@ -1,0 +1,13 @@
+<div>
+  <h3>Products List</h3>
+  <br>
+  <div class="products" *ngFor="let product of products">
+    <img src="{{product.image}}"/>
+    <h3>{{product.title}}</h3>
+    <h3>{{product.price | currency:USD:symbol}}</h3>
+    <button class="button2" [routerLink]="['/edit-product/', product._id]" >Edit</button>
+    <button class="button1" (click)='deleteProduct(product._id)'>Delete</button>  
+  </div>
+  <br>
+</div>
+

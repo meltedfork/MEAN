@@ -1,0 +1,53 @@
+<div>
+  <h3>Create a New Product</h3>
+  <form #addForm = "ngForm" (submit)= "addProduct()">
+    <label>Title</label>
+    <input 
+    type="text"
+    name="title"
+    required
+    minlength="4"
+    pattern=""
+    [(ngModel)]="newProduct.title"
+    #product = "ngModel"/>
+    <br>
+    
+    <label>Price</label>
+    <input 
+    type="number"
+    name="price"
+    required
+    min="0"
+    [(ngModel)]="newProduct.price"
+    #money = "ngModel"/>
+    <br>
+
+    <label>Image url</label>
+    <input 
+    type="text"
+    name="image"
+    [(ngModel)]="newProduct.image"
+    #photo = "ngModel"/>
+    <br>
+    <button class="button3" type="submit" [disabled]="!addForm.valid">Create</button>
+    <button class="button4" type="cancel">Cancel</button>
+  </form>
+</div>
+
+<div *ngIf="!product.valid">
+    <h3 *ngIf="product.errors.required">
+      Please enter a title for your product
+    </h3>
+    <h3 *ngIf="product.errors.minlength">
+      Title must be at least 4 characters
+    </h3>
+</div>
+
+<div *ngIf="!money.valid">
+    <h3 *ngIf="money.errors.required">
+      Please enter a price for your product
+    </h3>
+    <h3 *ngIf="money.errors.min">
+      The price must be greater than free
+    </h3>
+</div>
