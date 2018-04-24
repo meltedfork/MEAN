@@ -1,0 +1,49 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Remember... {{ title }}!
+  </h1>
+</div>
+
+<div class="AllTasks">
+<h2>All of the Tasks:</h2>
+<button (click)="getAllTasks()">Click to Retrieve Task List</button>
+<ul>
+  <li *ngFor="let task of tasks">
+    
+    <form (submit)="submitEdits(task._id, task)">
+      <p> {{ task | json }} </p>
+      <label>Task Name: 
+        <input type="text" [(ngModel)]="task.title" name="title" value='{{task["title"]}}'/>
+      </label>
+      <label>Task Description: 
+        <input type="text" [(ngModel)]="task.description" name="description" value='{{task.description}}'/>
+      </label>
+      <button type="submit">Submit Changes</button>
+    </form>
+
+    <!-- <button (click)='showEditForm(task._id)'>Edit This Task</button> -->
+    <h2>{{task["title"]}}</h2>
+    <h3>{{task.description}}</h3>
+    <button (click)='deleteTask(task._id)'>Delete This Task</button>
+  </li>
+</ul>
+</div>
+
+<div>
+<label>Find One Task:
+<input type="text" [(ngModel)]="_id" name="_id" placeholder="Enter task ID"/>
+</label>
+<button (click)="getOneTask(_id)" value="Find Task">Submit</button>
+<li *ngIf="oneTask">
+  <h4>{{oneTask.title}}</h4>
+</li>
+</div>
+
+<form (submit)="onSubmit()">
+    <!-- use the json pipe to see how newTask changes in real time -->
+    <!-- <p> {{ newTask | json }} </p> -->
+    <input type="text" name="newTask.title" [(ngModel)]="newTask.title" />
+    <input type="text" name="newTask.description" [(ngModel)]="newTask.description" />
+    <input type="submit" value="Create Task" />
+</form>
